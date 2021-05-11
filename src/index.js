@@ -68,7 +68,7 @@ const NewEntryForm = ({ onNewEntry, loading, error }) => {
     }}>
       { loading && <div>loading</div> }
       { error && <div>error</div> }
-      Term <input name="word"/>
+      Word <input name="word"/>
       Def <input name="def"/>
       <button>Submit</button>
     </form>
