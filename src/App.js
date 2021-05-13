@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { addEntry, getEntries } from './entry-service';
-import { Container, Divider, Header, Form, Button } from 'semantic-ui-react';
+import { addEntry, getEntries } from './components/entry-service';
+import { EntryList } from './components/EntryList';
+import { NewEntryForm } from './components/NewEntryForm';
+import { Container, Divider, Header } from 'semantic-ui-react';
 
 
 const App = () => {
@@ -59,46 +61,6 @@ const NewEntryContainer = ({ onEntryAdded }) => {
   return (
     <NewEntryForm onNewEntry={handleNewEntry} loading={loading} error={error}/>
   );
-}
-
-// Presentation only
-const NewEntryForm = ({ onNewEntry, loading, error }) => {
-
-  return (
-    <Form onSubmit={(e) => {
-      e.preventDefault();
-      onNewEntry({ word: document.getElementById("word").value, def: document.getElementById("def").value })
-    }}>
-      { loading && <div>loading</div> }
-      { error && <div>error</div> }
-      <Form.Field>
-        <label>Word</label>
-        <input placeholder='New word' id="word" name="word"/>
-      </Form.Field>
-      <Form.Field>
-        <label>Definition</label>
-        <input placeholder='Definition' id="def" name="def"/>
-      </Form.Field>
-      <Button type='submit'>Submit</Button>
-    </Form>
-  );
-}
-
-const EntryList = ({ entries }) => {
-  const elements = entries.map(({ id, word, def }) => {
-    return(
-      <React.Fragment key={id}>
-        <dt>{ word }</dt>
-        <dd>{ def }</dd>
-      </React.Fragment>
-    )
-  });
-
-  return (
-    <dl>
-      { elements }
-    </dl>
-  )
 }
 
 ReactDOM.render(
