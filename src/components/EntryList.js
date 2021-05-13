@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 
+//presentation
+
 const EntryList = ({ entries }) => {
   const elements = entries.map(({ id, word, def }) => {
     return(
