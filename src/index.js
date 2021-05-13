@@ -64,12 +64,12 @@ const NewEntryForm = ({ onNewEntry, loading, error }) => {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      onNewEntry({ word: 'Hello', def: 'World' })
+      onNewEntry({ word: document.getElementById("word").value, def: document.getElementById("def").value })
     }}>
       { loading && <div>loading</div> }
       { error && <div>error</div> }
-      Word <input name="word"/>
-      Def <input name="def"/>
+      Word <input id="word" name="word"/>
+      Def <input id="def" name="def"/>
       <button>Submit</button>
     </form>
   );
@@ -98,4 +98,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
