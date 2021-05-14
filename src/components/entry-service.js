@@ -23,7 +23,11 @@ const getEntries = () => {
   });
 };
 
+const randomize = () => {
+};
+
 export {
   addEntry,
-  getEntries
+  getEntries,
+  randomize
 };

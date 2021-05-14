@@ -32,10 +32,7 @@ const HomePage = () => {
       <Divider />
       <Button color='purple'
         as={Link}
-        to={'/practice'}
-        style={{
-          cursor: 'pointer',
-        }}>
+        to={'/practice'}>
         Practice
       </Button>
       <Divider />
@@ -45,3 +42,4 @@ const HomePage = () => {
 };
 
 export { HomePage };
+
