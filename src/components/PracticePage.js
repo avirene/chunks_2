@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getEntries } from './entry-service';
-import { EntryList } from './EntryList';
 import { Container, Divider, Header, Form, Button, Message } from 'semantic-ui-react';
-import { NewEntryContainer } from './NewEntryContainer';
 
 const PracticePage = () => {
 
@@ -19,6 +17,8 @@ const PracticePage = () => {
       })
   }, []);
 
+  const randomizeEntry = Math.floor(Math.random() * entries.length);
+
   return (
     <Container style={{ marginTop: '50px' }}>
       <Header as="h1">Practice</Header>
@@ -27,7 +27,7 @@ const PracticePage = () => {
       <Form.Field>
         <label>Definition</label>
         <div>
-          <Message color='pink'>{`${entries}`}</Message>
+          <Message color='violet'>{`${entries[randomizeEntry].def}`}</Message>
         </div>
       </Form.Field>
       <Form.Field>
