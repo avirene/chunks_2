@@ -1,8 +1,8 @@
 import { nanoid } from 'nanoid';
 
 let entries = [
-  { id: nanoid(), word: 'React', def: 'UI Library'},
-  { id: nanoid(), word: 'Pizza', def: 'A tasty Italian food'},
+  { id: nanoid(), word: 'perilous', def: 'very dangerous'},
+  { id: nanoid(), word: 'palpable', def: 'so strong that you seem to feel it physically yourself'},
 ];
 
 const addEntry = ({ word, def }) => {
@@ -23,11 +23,7 @@ const getEntries = () => {
   });
 };
 
-const randomize = () => {
-};
-
 export {
   addEntry,
   getEntries,
-  randomize
 };
