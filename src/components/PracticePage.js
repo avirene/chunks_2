@@ -27,7 +27,7 @@ const PracticePage = () => {
       <Form.Field>
         <label>Definition</label>
         <div>
-          <Message color='violet'>{`${entries[randomizeEntry].def}`}</Message>
+          <Message color='violet'>{`${randomizeEntry.def}`}</Message>
         </div>
       </Form.Field>
       <Form.Field>
