@@ -4,6 +4,7 @@ import { EntryList } from './EntryList';
 import { Container, Divider, Header, Button } from 'semantic-ui-react';
 import { NewEntryContainer } from './NewEntryContainer';
 import { Link } from 'react-router-dom';
+// import PropType from 'prop-types';
 
 const HomePage = () => {
 
@@ -32,7 +33,8 @@ const HomePage = () => {
       <Divider />
       <Button color='purple'
         as={Link}
-        to={'/practice'}>
+        to={'/practice'}
+        entries={entries}>
         Practice
       </Button>
       <Divider />
@@ -40,6 +42,14 @@ const HomePage = () => {
     </Container>
   );
 };
+
+// HomePage.propTypes = {
+//   entries: PropType.arrayOf(PropType.shape({
+//     id: PropType.string.isRequired,
+//     word: PropType.string.isRequired,
+//     def: PropType.string.isRequired,
+//   }).isRequired)
+// };
 
 export { HomePage };
 

@@ -1,23 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getEntries } from './entry-service';
+import { HomePage } from './HomePage';
 import { Container, Divider, Header, Form, Button, Message } from 'semantic-ui-react';
 
-const PracticePage = () => {
+const PracticePage = ({ entries }) => {
 
-  const [entries,  setEntries] = useState([]);
-
-  useEffect(() => {
-    // loading
-    getEntries()
-      .then((entries) => {
-        setEntries(entries)
-      })
-      .catch(() => {
-        // handle error
-      })
-  }, []);
-
-  const randomizeEntry = Math.floor(Math.random() * entries.length);
+  const randomiseEntry = Math.floor(Math.random() * entries.length);
 
   return (
     <Container style={{ marginTop: '50px' }}>
@@ -27,7 +14,7 @@ const PracticePage = () => {
       <Form.Field>
         <label>Definition</label>
         <div>
-          <Message color='violet'>{`${randomizeEntry.def}`}</Message>
+          <Message color='violet'>{`${[randomiseEntry].def}`}</Message>
         </div>
       </Form.Field>
       <Form.Field>
