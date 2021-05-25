@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
+// import PropType from 'prop-types';
 
-//presentation
+// presentation
 
 const EntryList = ({ entries }) => {
   const elements = entries.map(({ id, word, def }) => {
@@ -23,5 +24,13 @@ const EntryList = ({ entries }) => {
     </dl>
   )
 }
+
+// EntryList.propTypes = {
+//   elements: PropType.arrayOf(PropType.shape({
+//     id: PropType.string.isRequired,
+//     word: PropType.string.isRequired,
+//     def: PropType.string.isRequired,
+//   }).isRequired)
+// };
 
 export { EntryList };

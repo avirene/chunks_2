@@ -33,8 +33,7 @@ const HomePage = () => {
       <Divider />
       <Button color='purple'
         as={Link}
-        to={'/practice'}
-        entries={entries}>
+        to={'/practice'}>
         Practice
       </Button>
       <Divider />
