@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { HomePage } from './HomePage';
 import { getEntries } from './entry-service';
 import { Container, Divider, Header, Form, Button, Message } from 'semantic-ui-react';
 
