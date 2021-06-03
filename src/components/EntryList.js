@@ -5,24 +5,27 @@ import { Card } from 'semantic-ui-react';
 // presentation
 
 const EntryList = ({ entries }) => {
-  const elements = entries.map(({ id, word, def }) => {
-    return(
-      <React.Fragment key={id}>
+  // const elements = entries.map(({ id, word, def }) => {
+    return (
+    <dl>
+      {entries.map(element => (
+      <React.Fragment key={element.id}>
         <Card color='teal'>
           <Card.Content>
-            <Card.Header>{ word }</Card.Header>
-            <Card.Description>{ def }</Card.Description>
+            <Card.Header>{ element.word }</Card.Header>
+            <Card.Description>{ element.def }</Card.Description>
           </Card.Content>
         </Card>
       </React.Fragment>
-    )
-  });
-
-  return (
-    <dl>
-      { elements }
+    ))}
     </dl>
-  )
+  );
+
+  // return (
+  //   <dl>
+  //     { elements }
+  //   </dl>
+  // )
 }
 
 // EntryList.propTypes = {
