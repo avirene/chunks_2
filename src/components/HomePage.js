@@ -4,6 +4,7 @@ import { EntryList } from './EntryList';
 import { Container, Divider, Header, Button } from 'semantic-ui-react';
 import { NewEntryContainer } from './NewEntryContainer';
 import { Link } from 'react-router-dom';
+import { PracticePage } from './PracticePage';
 // import PropType from 'prop-types';
 
 const HomePage = () => {
@@ -31,7 +32,8 @@ const HomePage = () => {
       <Divider />
       <NewEntryContainer onEntryAdded={handleAddedEntry}/>
       <Divider />
-      <Button color='purple'
+      <Button practiceEntries={entries}
+        color='purple'
         as={Link}
         to={'/practice'}>
         Practice

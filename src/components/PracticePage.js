@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { getEntries } from './entry-service';
 import { Container, Divider, Header, Form, Button, Message } from 'semantic-ui-react';
 
-const PracticePage = () => {
+const PracticePage = ({ practiceEntries }) => {
 
   const [entries,  setEntries] = useState([]);
 
   useEffect(() => {
     // loading
     getEntries()
-      .then((entries) => {
-        setEntries(entries)
+      .then((practiceEntries) => {
+        setEntries(practiceEntries)
       })
       .catch(() => {
         // handle error
@@ -27,7 +27,7 @@ const PracticePage = () => {
       <Form.Field>
         <label>Definition</label>
         <div>
-          <Message color='violet'>{`${entries[randomiseEntry]}`}</Message>
+          <Message color='violet'>{`${entries[randomiseEntry].def}`}</Message>
         </div>
       </Form.Field>
       <Form.Field>
